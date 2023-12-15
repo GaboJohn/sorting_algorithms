@@ -18,28 +18,23 @@ void swap(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, len, sort;
-	bool bubbly;
+	size_t i, len = size;
+	bool sort;
 
-	for (i = 0; i < size - 1; i++)
-	{
-		for (len = 0; len < size - i - 1; len++)
-		{
-			if (array[len] > array[len + 1])
-		{
-			swap(&array[len], &array[len + 1]);
+	if (array == NULL || size < 2)
+		return;
 
-			for (sort = 0; sort < size; sort++)
+	do {
+		sort = false;
+		for (i = 0; i < len - 1; i++)
+		{
+			if (array[i] > array[i + 1])
 			{
-
-				printf("%d ", array[sort]);
+				swap(array + i, array + i + 1);
+				print_array(array, size);
+			sort = true;
 			}
-			printf("\n");
-
-			bubbly = true;
 		}
-		}
-		if (!bubbly)
-			break;
-	}
+		len--;
+	} while (sort);
 }

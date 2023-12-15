@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -20,15 +19,15 @@ typedef struct listint_s
 } listint_t;
 
 /**
- * enum my_bool - Enumeration of Boolean values.
+ * enum bool - Enumeration of Boolean values.
  * @false: Equals 0.
  * @true: Equals 1.
  */
-typedef enum my_bool
+typedef enum bool
 {
-	MY_FALSE = 0,
-	MY_TRUE
-} my_bool;
+	false = 0,
+	true
+} bool;
 
 void bubble_sort(int *array, size_t size);
 void print_array(const int *array, size_t size);
