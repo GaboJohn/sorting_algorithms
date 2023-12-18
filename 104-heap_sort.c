@@ -22,10 +22,11 @@ void swap(int *a, int *b)
 void heapify(int *array, size_t size, size_t base, size_t root)
 {
 	size_t left, right, largest;
+
 	left = 2 * root + 1;
 	right = 2 * root + 2;
 	largest = root;
-	
+
 	if (left < base && array[left] > array[largest])
 		largest = left;
 	if (right < base && array[right] > array[largest])
@@ -49,7 +50,7 @@ void heap_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	
+
 	for (i = size / 2 - 1; i >= 0; i--)
 		heapify(array, size, size, i);
 	for (i = size - 1; i > 0; i--)
